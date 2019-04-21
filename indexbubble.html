@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HelloWorld</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div>
+
+        <div style="width: 30%; float:left;margin-left: 520px">
+            <p id="number">Hello World 1</p>
+            <p id="name">name</p>
+            <p id="country">country</p>
+            <p id="RankingNumber">Ranking Number</p>
+            <p id="AC">AC</p>
+            <p id="LifeSciences">Life Sciences</p>
+            <p id="Earth">Earth & Environmental Sciences</p>
+            <p id="Chemistry">Chemistry</p>
+            <p id="Physical">Physical Sciences</p>
+        </div>
+        <div style="width: 30%; float:left;margin-left: -120px">
+    
+            <form method="get" maxlength="800" name="defcountry">
+                Points:
+                <input type="range" name="points" min="10" max="510" step="50" onchange="handleNum()" value="50">
+                <input type="submit" value="submit" onchange="handleNum()">
+            </form>
+
+            <form>Country：<select name="Country">
+                    <option>UnitedStatesofAmerica</option>
+                    <option>China</option>
+                    <option>UnitedKingdom</option>
+                    <option>Japan</option>
+                    <option>Switzerland</option>
+                    <option>France</option>
+                    <option>Canada</option>
+                    <option>Singapore</option>
+                    <option>Germany</option>
+                    <option>Netherlands</option>
+                    <option>Denmark</option>
+                    <option>Australia</option>
+                    <option>India</option>
+                    <option>Sweden</option>
+                    <option>SouthKorea</option>
+                    <option>Israel</option>
+                    <option>Spain</option>
+                    <option>Italy</option>
+                    <option>Russia</option>
+                    <option>Norway</option>
+                    <option>Belgium</option>
+                    <option>Taiwan</option>
+                    <option>Finland</option>
+                    <option>CzechRepublic</option>
+                    <option>Portugal</option>
+                    <option>Brazil</option>
+                    <option>SaudiArabia</option>
+                    <option>Austria</option>
+                    <option>Mexico</option>
+                    <option>Poland</option>
+                    <option>Ireland</option>
+                    <option>NewZealand</option>
+                    <option>Argentina</option>
+                </select>
+                <!-- <input type="radio" name="subject" value="LifeSciences">Life Sciences
+                <input type="radio" name="subject" value="EarthEnvironmentalSciences">Earth & Environmental Sciences
+                <input type="radio" name="subject" value="Chemistry">Chemistry
+                <input type="radio" name="subject" value="PhysicalSciences">Physical Sciences -->
+                <input type="radio" name="allsubject" value="allsubject">All subjects
+                <input type="submit" value="submit" />
+            </form><br />
+            <form>Country：<select name="pkCountry1">
+                    <option>UnitedStatesofAmerica</option>
+                    <option>China</option>
+                    <option>UnitedKingdom</option>
+                    <option>Japan</option>
+                    <option>Switzerland</option>
+                    <option>France</option>
+                    <option>Canada</option>
+                    <option>Singapore</option>
+                    <option>Germany</option>
+                    <option>Netherlands</option>
+                    <option>Denmark</option>
+                    <option>Australia</option>
+                    <option>India</option>
+                    <option>Sweden</option>
+                    <option>SouthKorea</option>
+                    <option>Israel</option>
+                    <option>Spain</option>
+                    <option>Italy</option>
+                    <option>Russia</option>
+                    <option>Norway</option>
+                    <option>Belgium</option>
+                    <option>Taiwan</option>
+                    <option>Finland</option>
+                    <option>CzechRepublic</option>
+                    <option>Portugal</option>
+                    <option>Brazil</option>
+                    <option>SaudiArabia</option>
+                    <option>Austria</option>
+                    <option>Mexico</option>
+                    <option>Poland</option>
+                    <option>Ireland</option>
+                    <option>NewZealand</option>
+                    <option>Argentina</option>
+                </select> &nbsp;&nbsp;&nbsp;PK&nbsp;&nbsp;
+                Country：<select name="pkCountry2">
+                    <option>UnitedStatesofAmerica</option>
+                    <option>China</option>
+                    <option>UnitedKingdom</option>
+                    <option>Japan</option>
+                    <option>Switzerland</option>
+                    <option>France</option>
+                    <option>Canada</option>
+                    <option>Singapore</option>
+                    <option>Germany</option>
+                    <option>Netherlands</option>
+                    <option>Denmark</option>
+                    <option>Australia</option>
+                    <option>India</option>
+                    <option>Sweden</option>
+                    <option>SouthKorea</option>
+                    <option>Israel</option>
+                    <option>Spain</option>
+                    <option>Italy</option>
+                    <option>Russia</option>
+                    <option>Norway</option>
+                    <option>Belgium</option>
+                    <option>Taiwan</option>
+                    <option>Finland</option>
+                    <option>CzechRepublic</option>
+                    <option>Portugal</option>
+                    <option>Brazil</option>
+                    <option>SaudiArabia</option>
+                    <option>Austria</option>
+                    <option>Mexico</option>
+                    <option>Poland</option>
+                    <option>Ireland</option>
+                    <option>NewZealand</option>
+                    <option>Argentina</option>
+                </select>
+                <input type="submit" value="submit" />
+            </form><br />
+        </div>
+    </div>
+    <div id="bubbleChart" >
+    </div>
+    <script src="mainbubble.js"></script>
+</body>
+
+</html>

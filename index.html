@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href='https://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<!-- <script src="//d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script> -->
+   
+	<title>Vertical Fixed Navigation #2 | CodyHouse</title>
+</head>
+<body>
+<nav class="cd-vertical-nav">
+	<ul>
+		<li><a href="#section1" class="active"><span class="label">Home</span></a></li>
+		<li><a href="#section2"><span class="label">Personal Info</span></a></li>
+		<li><a href="#section3"><span class="label">AC vs. FC</span></a></li>
+		<li><a href="#section4"><span class="label">TOP 100 Rank</span></a></li>
+		<li><a href="#section5"><span class="label">Overall Info</span></a></li>
+		<li><a href="#section6"><span class="label">Relationship</span></a></li>
+		<li><a href="#section7"><span class="label">Subject Details</span></a></li>
+	</ul>
+</nav><!-- .cd-vertical-nav -->
+
+<button class="cd-nav-trigger cd-image-replace">Open navigation<span aria-hidden="true"></span></button>
+
+<section id="section1" class="cd-section">
+	<div class="content-wrapper">
+		<div class="homepage" style="width: 100%; float:left;">
+			<iframe src="video.html" width=1900px height=960px></iframe>
+		</div>
+	</div>
+</section><!-- cd-section -->
+
+<section id="section2" class="cd-section">
+	<div class="content-wrapper" style="width: 100%;">
+		<h1 style="font-size: 60px; margin-top: 20px; margin-bottom: 35px;">+++++   Personal Prediction   +++++</h1><br><br>
+		<!-- <a href="#section2" class="cd-scroll-down cd-image-replace">scroll down</a> -->
+		<p style="color: #2d2c2c; font-size: 20px; text-align: left; margin-left: 433px; margin-top: -25px;">Please input your information:</p>
+        <div class="user-input" style="width: 50%; float:left; margin-left: 433px;">
+        	<div class="inputbox1" style="text-align: left;">
+			<p>TOEFL:</p><input placeholder="TOEFL" id="num1" style="width: 150px; height:25px; background-color:#ffffff;border:0; margin-top: 10px;"/><br>
+	    	<p>GRE:  </p><input placeholder="GRE" id="num2" style="width: 150px; height:25px; background-color:#ffffff;border:0; margin-top: 10px;"/> <br>
+	    	<p>SOP:  </p><input placeholder="SOP" id="num3" style="width: 150px; height:25px; background-color:#ffffff;border:0; margin-top: 10px;"/> <br>
+	    	<p>LOR:  </p><input placeholder="LOR" id="num4" style="width: 150px; height:25px; background-color:#ffffff;border:0; margin-top: 10px;"/> <br>
+	    	<p>CGPA: </p><input placeholder="CGPA" id="num5" style="width: 150px; height:25px; background-color:#ffffff;border:0; margin-top: 10px;"/>
+	    	<br>
+	    	<button id="calcBtn" onclick="execute()" style="width: 150px; height:50px;background-color: #c1e1cc; border: none; font-size: 30px;font-color: #2d2c2c; margin-top: 20px;" ;>submit</button><br><br>
+	    	<p>Rank No.</p><input placeholder="?" id="rank" style="width: 150px; height:25px; background-color:#ffffff;border:0; margin-top: 10px;"> <br>
+	    	<p>Probability:</p><input placeholder="result" id="result" style="width: 150px; height:25px; background-color:#ffffff;border:0; margin-top: 10px;"/>
+            </div>
+
+	    	<script>
+	        	/**
+	         	* 执行计算，提取数据，交给计算函数
+	         	*/
+	        	function execute()
+	        	{
+	            	var num1 = document.getElementById("num1").value;
+	            	var num2 = document.getElementById("num2").value;
+	            	var num3 = document.getElementById("num3").value;
+	            	var num4 = document.getElementById("num4").value;
+	            	var num5 = document.getElementById("num5").value;
+	            	var executionResult = calc(num1, num2, num3, num4, num5);
+	            	var result = document.getElementById("result");
+	            	var rank = document.getElementById("rank");
+	            	result.value = executionResult[0];
+	            	rank.value = executionResult[1];
+	        	};
+	        	/**
+	         	* 计算函数，简单策略模式，严格来说应该给每个算法抽象接口。
+	         	*/
+	        	function calc(num1, num2, num3, num4, num5)
+	        	{
+	            	num1 = parseFloat(num1);
+	            	num2 = parseFloat(num2);
+	            	num3 = parseFloat(num3);
+	            	num4 = parseFloat(num4);
+	            	num5 = parseFloat(num5);
+	            	
+	            	var prediction1 = (num1/99.08 + num2/303.15 + num3/1.88 + num4/2.21 + num5/7.75)/5*0.55;
+	            	var prediction2 = (num1/103.52 + num2/309.18 + num3/2.71 + num4/2.93 + num5/8.18)/5*0.63;
+	            	var prediction3 = (num1/106.89 + num2/315.95 + num3/3.36 + num4/3.40 + num5/8.55)/5*0.71;
+	            	var prediction4 = (num1/111.82 + num2/324.82 + num3/4.11 + num4/4.01 + num5/9.02)/5*0.82;
+	            	var prediction5 = (num1/113.67 + num2/328.33 + num3/4.50 + num4/4.36 + num5/9.29)/5*0.89;
+	            	var prediction = Math.min(prediction1, prediction2, prediction3, prediction4, prediction5);
+	            	var rankNum;
+	            	if (prediction==prediction1)
+	            	{
+	                	rankNum = 1;
+	            	}
+	            	else if (prediction==prediction2)
+	            	{
+	                	rankNum = 2;
+	            	}
+	            	else if (prediction==prediction3)
+	            	{
+	                	rankNum = 3;
+	            	}
+	            	else if (prediction==prediction4)
+	            	{
+	                	rankNum = 4;
+	            	}
+	            	else if (prediction==prediction5)
+	            	{
+	                	rankNum = 5;
+	            	}
+	            	return [prediction, rankNum];
+	        	};
+	    	</script>
+	    </div>
+	    <div class="personal" style="width: 50%; float:left; margin-left: -717px; margin-top: -30px;">
+	    	<iframe src="personal.html" width=800px height=800px scrolling="no"></iframe>
+	    </div>
+        
+	</div>
+</section><!-- cd-section -->
+
+<section id="section3" class="cd-section">
+	<div class="content-wrapper" style="width: 100%;">
+		<h1 style="font-size: 60px; margin-top: 10px; margin-bottom: 35px;">+++++   AC vs. FC   +++++</h1><br><br>
+		<div class="AC" style="position: relative; width: 30%; float:left; margin-top:-150px; margin-left: -50px;">
+			<iframe src="AC.html" width=800px height=800px scrolling="no"></iframe>
+		</div>
+
+		<div class="ACvsFC" style="position: relative; width: 40%; float:left; margin-top:30px; margin-left: 32px">
+			<p style="color: #2d2c2c">Article count (AC) - Regardless of whether an article has one or more authors, each author's country or institution receives an AC score.</p><br>
+		    <p>Fractional measurement (FC) - FC considers the relative contribution of each author of the paper. An article has a total FC score of 1, and the score is shared equally by all authors, assuming that each person's contribution is the same. For example, a paper has ten authors, and each author has an FC score of 0.1. If the author has multiple work units, then their personal FC scores will be evenly distributed among these work units.</p><br>
+		    <p style="color: #2d2c2c">Although AC and FC represent the academic power to some extent, there is still diffenrence in the 2 clouds. The larger the font size, the higher scores of AC or FC will be. Although some universities has a lower AC index, such as Peking university, its FC index is going to be higher. It might suggest that Peking University tends to publish an article in a more group work method.</p>
+		</div>
+
+		<div class="FC" style="position: relative; width: 30%; float:left; margin-top:-150px; margin-left: -82px;">
+			<iframe src="FC.html" width=600px height=800px scrolling="no"></iframe>
+		</div>
+	</div>
+</section><!-- cd-section -->
+
+<section id="section4" class="cd-section">
+	<div class="content-wrapper">
+		<h1 style="font-size: 60px; margin-top: 20px; margin-bottom: 35px;">+++++   Top 100 Rank   +++++</h1><br><br>
+		<p style="margin-top: -20px; margin-bottom: 30px;">University Ranking changes as time goes by. There all 5 evaluating components to describe the overall scores the a university, including teaching, research, citations, industry income and national ourlook.</p>
+		<div class="section3map" style="width: 50%; float:left; margin-left: -50px;">
+			<iframe src="map.html" width=800px height=800px scrolling="no"></iframe>
+		</div>
+
+		<div class="select" style="width: 5%; float:left; margin-left: -70px;">
+			<form>
+				<select name="school" style="text-align: left; margin-top: 13px;">
+					<option value="1">Aarhus University</option>
+					<option value="2">Australian National University</option>
+					<option value="3">Boston University</option>
+					<option value="4">Brown University</option>
+					<option value="5">California Institute of Technology</option>
+					<option value="6">Carnegie Mellon University</option>
+					<option value="7">Case Western Reserve University</option>
+					<option value="8">Charité - Universit?tsmedizin Berlin</option>
+					<option value="9">Chinese University of Hong Kong</option>
+					<option value="10">Columbia University</option>
+					<option value="11">Cornell University</option>
+					<option value="12">Dartmouth College</option>
+					<option value="13">Delft University of Technology</option>
+					<option value="14">Duke University</option>
+					<option value="15">Durham University</option>
+					<option value="16">école Normale Supérieure</option>
+					<option value="17">école Normale Supérieure de Lyon</option>
+					<option value="18">école Polytechnique</option>
+					<option value="19">école Polytechnique Fédérale de Lausanne</option>
+					<option value="20">Emory University</option>
+					<option value="21">Erasmus University Rotterdam</option>
+					<option value="22">ETH Zurich</option>
+					<option value="23">Free University of Berlin</option>
+					<option value="24">George Washington University</option>
+					<option value="25">Georgetown University</option>
+					<option value="26">Georgia Institute of Technology</option>
+					<option value="27">Ghent University</option>
+					<option value="28">Harvard University</option>
+					<option value="29">Heidelberg University</option>
+					<option value="30">Hong Kong University of Science and Technology</option>
+					<option value="31">Humboldt University of Berlin</option>
+					<option value="32">Imperial College London</option>
+					<option value="33">Johns Hopkins University</option>
+					<option value="34">Karolinska Institute</option>
+					<option value="35">King’s College London</option>
+					<option value="36">Korea Advanced Institute of Science and Technology (KAIST</option>
+					<option value="37">KU Leuven</option>
+					<option value="38">Kyoto University</option>
+					<option value="39">Leiden University</option>
+					<option value="40">LMU Munich</option>
+					<option value="41">London School of Economics and Political Science</option>
+					<option value="42">Lund University</option>
+					<option value="43">Maastricht University</option>
+					<option value="44">Massachusetts Institute of Technology</option>
+					<option value="45">McGill University</option>
+					<option value="46">McMaster University</option>
+					<option value="47">Michigan State University</option>
+					<option value="48">Middle East Technical University</option>
+					<option value="49">Monash University</option>
+					<option value="50">Nanyang Technological University, Singapore</option>
+					<option value="51">National University of Singapore</option>
+					<option value="52">New York University</option>
+					<option value="53">Northwestern University</option>
+					<option value="54">Ohio State University</option>
+					<option value="55">Paris Sciences et Lettres – PSL Research University Paris</option>
+					<option value="56">Paris-Sud University</option>
+					<option value="57">Peking University</option>
+					<option value="58">Pennsylvania State University</option>
+					<option value="59">Pierre and Marie Curie University</option>
+					<option value="60">Pohang University of Science and Technology (POSTECH</option>
+					<option value="61">Princeton University</option>
+					<option value="62">Purdue University</option>
+					<option value="63">Queen Mary University of London</option>
+					<option value="64">Rice University</option>
+					<option value="65">Royal Holloway, University of London</option>
+					<option value="66">Rutgers, the State University of New Jersey</option>
+					<option value="67">RWTH Aachen University</option>
+					<option value="68">Scuola Normale Superiore di Pisa</option>
+					<option value="69">Seoul National University</option>
+					<option value="70">Sorbonne University</option>
+					<option value="71">Stanford University</option>
+					<option value="72">Stockholm University</option>
+					<option value="73">Stony Brook University</option>
+					<option value="74">Sungkyunkwan University (SKKU</option>
+					<option value="75">Technical University of Berlin</option>
+					<option value="76">Technical University of Munich</option>
+					<option value="77">The University of Tokyo</option>
+					<option value="78">Trinity College Dublin</option>
+					<option value="79">Tsinghua University</option>
+					<option value="80">Tufts University</option>
+					<option value="81">UCL</option>
+					<option value="82">University College Dublin</option>
+					<option value="83">University of Adelaide</option>
+					<option value="84">University of Alberta</option>
+					<option value="85">University of Amsterdam</option>
+					<option value="86">University of Arizona</option>
+					<option value="87">University of Basel</option>
+					<option value="88">University of Bonn</option>
+					<option value="89">University of Bristol</option>
+					<option value="90">University of British Columbia</option>
+					<option value="91">University of California, Berkeley</option>
+					<option value="92">University of California, Davis</option>
+					<option value="93">University of California, Irvine</option>
+					<option value="94">University of California, Los Angeles</option>
+					<option value="95">University of California, San Diego</option>
+					<option value="96">University of California, Santa Barbara</option>
+					<option value="97">University of California, Santa Cruz</option>
+					<option value="98">University of Cambridge</option>
+					<option value="99">University of Chicago</option>
+					<option value="100">University of Colorado Boulder</option>
+					<option value="101">University of Copenhagen</option>
+					<option value="102">University of Edinburgh</option>
+					<option value="103">University of Exeter</option>
+					<option value="104">University of Freiburg</option>
+					<option value="105">University of Glasgow</option>
+					<option value="106">University of G?ttingen</option>
+					<option value="107">University of Groningen</option>
+					<option value="108">University of Helsinki</option>
+					<option value="109">University of Hong Kong</option>
+					<option value="110">University of Illinois at Urbana-Champaign</option>
+					<option value="111">University of Manchester</option>
+					<option value="112">University of Maryland, College Park</option>
+					<option value="113">University of Massachusetts</option>
+					<option value="114">University of Melbourne</option>
+					<option value="115">University of Michigan</option>
+					<option value="116">University of Minnesota Twin Cities</option>
+					<option value="117">University of Montreal</option>
+					<option value="118">University of New South Wales</option>
+					<option value="119">University of North Carolina at Chapel Hill</option>
+					<option value="120">University of Notre Dame</option>
+					<option value="121">University of Oxford</option>
+					<option value="122">University of Pennsylvania</option>
+					<option value="123">University of Pittsburgh</option>
+					<option value="124">University of Queensland</option>
+					<option value="125">University of Rochester</option>
+					<option value="126">University of Science and Technology of China</option>
+					<option value="127">University of Sheffield</option>
+					<option value="128">University of Southampton</option>
+					<option value="129">University of Southern California</option>
+					<option value="130">University of St Andrews</option>
+					<option value="131">University of Sussex</option>
+					<option value="132">University of Sydney</option>
+					<option value="133">University of Texas at Austin</option>
+					<option value="134">University of Toronto</option>
+					<option value="135">University of Tübingen</option>
+					<option value="136">University of Utah</option>
+					<option value="137">University of Virginia</option>
+					<option value="138">University of Warwick</option>
+					<option value="139">University of Washington</option>
+					<option value="140">University of Wisconsin</option>
+					<option value="141">University of Wisconsin-Madison</option>
+					<option value="142">University of York</option>
+					<option value="143">University of Zurich</option>
+					<option value="144">Uppsala University</option>
+					<option value="145">Utrecht University</option>
+					<option value="146">Vanderbilt University</option>
+					<option value="147">Wageningen University & Research</option>
+					<option value="148">Wake Forest University</option>
+					<option value="149">Washington University in St Louis</option>
+					<option value="150">William & Mary</option>
+					<option value="151">Yale University</option>
+					<option value="152">Yeshiva University</option>
+
+				</select>
+				<input type="submit" value ="submit" style="width: 75px; height:25px; background-color: #c1e1cc; border: none; font-size: 20px;font-color: #2d2c2c; margin-left: -18px;margin-top: 20px; text-align: left"/>
+			</form>
+			
+		</div>
+
+		<div class="section3line" style="width: 45%; float:left; margin-left: 0px;">
+			<iframe src=" "line_chart/school (1).html" width=800px height=800px scrolling="no" id="hehe"></iframe>
+			 <script>
+  				var text = "line_chart/Australian National University.html";
+  				var text1 = "line_chart/Boston University.html"
+    			document.getElementById("hehe").src=text1;
+    			window.handleNum = function (par) {
+	    			//获取当前URL
+				    var local_url = document.location.href;
+				    //获取要取得的get参数位置
+				    var get = local_url.indexOf(par + "=");
+				    if (get == -1) {
+				        return false;
+				    }
+				    //截取字符串
+				    var get_par = local_url.slice(par.length + get + 1);
+				    //判断截取后的字符串是否还有其他get参数
+				    var nextPar = get_par.indexOf("&");
+				    if (nextPar != -1) {
+				        get_par = get_par.slice(0, nextPar);
+				    }
+				    return get_par;
+				}
+				var getname1 = window.handleNum("school");
+				if(getname1 == false)
+					getname1 = 2;
+				var text1 = "line_chart/school ("+getname1+").html"
+   				document.getElementById("hehe").src=text1;
+				console.log(getname1); 
+    		</script>
+		</div>
+	</div>
+</section><!-- cd-section -->
+
+<section id="section5" class="cd-section">
+	<div class="content-wrapper" style="width: 100%">
+		<h1 style="font-size: 60px; margin-top: 20px; margin-bottom: 35px;">+++++   Overall Information   +++++</h1><br><br>
+		<p style="margin-top: -20px; margin-bottom: 30px;">The GDP, Employment and unemployment of a country will be related to the further development of a person if we want to apply to a specific university located in that country.</p>
+		<div class="section4map" style="width: 100%;">
+			<iframe src="mapforfeatures.html" scrolling="no" style="width: 1900px; height: 850px; "></iframe>
+		</div>
+	</div>
+</section><!-- cd-section -->
+
+<section id="section6" class="cd-section">
+	<div class="content-wrapper">
+		<h1 style="font-size: 60px; margin-top: 20px; margin-bottom: 35px;">+++++   Relationship   +++++</h1><br><br>
+		<table border="0" style="margin-top: -50px;">
+			<tr>
+			<td><iframe src="2010GDP.html" scrolling="no" style="width: 920px; height: 400px; "></iframe></td>
+			<td><iframe src="2018GDP.html" scrolling="no" style="width: 920px; height: 400px; "></iframe></td>
+			</tr>
+
+			<tr>
+			<td><iframe src="2010Work.html" scrolling="no" style="width: 920px; height: 400px; "></iframe></td>
+			<td><iframe src="2018Work.html" scrolling="no" style="width: 920px; height: 400px; "></iframe></td>
+			</tr>
+
+			<tr>
+			<td><iframe src="2010Unwork.html" scrolling="no" style="width: 920px; height: 400px; "></iframe></td>
+			<td><iframe src="2018Unwork.html" scrolling="no" style="width: 920px; height: 400px; "></iframe></td>
+			</tr>
+		</table>
+	</div>
+</section><!-- cd-section -->
+
+<section id="section7" class="cd-section">
+	<div class="content-wrapper">
+		<h1 style="position； relative; font-size: 60px; margin-top: 30px; margin-bottom: 35px;">+++++   Subject Details   +++++</h1><br><br>
+		<!-- <p style="margin-top: -20px; margin-bottom: 30px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto numquam, totam iusto officia earum perferendis, culpa ad atque eveniet praesentium nobis expedita similique beatae tenetur. Distinctio vel tenetur, id cum.</p> -->
+		<div class="section5bubble" style="width: 100%;">
+			<iframe src="indexbubble.html" scrolling="no" style="width: 1900px; height: 900px; margin-top: -70px;"></iframe>
+		</div>
+	</div>
+</section><!-- cd-section -->
+
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
